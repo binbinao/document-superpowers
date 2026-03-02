@@ -49,21 +49,7 @@ Each stage has strict gates - you can't skip ahead without completing the previo
 
 ## Installation
 
-### Claude Code (via Plugin Marketplace)
-
-In Claude Code, register the marketplace first:
-
-```
-/plugin marketplace add obra/superpowers-marketplace
-```
-
-Then install the plugin from this marketplace:
-
-```
-/plugin install superpowers@superpowers-marketplace
-```
-
-### Claude Code (Manual)
+### Claude Code
 
 ```bash
 # Clone to Claude Code global skills directory
@@ -81,7 +67,7 @@ After cloning, add skill references in `~/.claude/CLAUDE.md` or your project's `
 - ~/.claude/skills/document-superpowers/skills/subagent-driven-writing/SKILL.md
 ```
 
-### Cursor / Codebuddy (CLI)
+### Cursor
 
 ```bash
 # Clone to Cursor global skills directory
@@ -92,6 +78,18 @@ git clone https://github.com/binbinao/document-superpowers.git .cursor/skills/do
 ```
 
 After cloning, add the skill paths in Cursor's Rules or Agent Settings.
+
+### Codebuddy (CLI)
+
+```bash
+# Clone to Codebuddy global skills directory
+git clone https://github.com/binbinao/document-superpowers.git ~/.codebuddy/skills/document-superpowers
+
+# Or clone to project-level directory
+git clone https://github.com/binbinao/document-superpowers.git .codebuddy/skills/document-superpowers
+```
+
+After cloning, add the skill paths in Codebuddy's configuration.
 
 ### Gemini CLI
 
