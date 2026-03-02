@@ -49,17 +49,79 @@ Each stage has strict gates - you can't skip ahead without completing the previo
 
 ## Installation
 
-### For OpenClaw
+### Claude Code (via Plugin Marketplace)
+
+In Claude Code, register the marketplace first:
+
+```
+/plugin marketplace add obra/superpowers-marketplace
+```
+
+Then install the plugin from this marketplace:
+
+```
+/plugin install superpowers@superpowers-marketplace
+```
+
+### Claude Code (Manual)
+
+```bash
+# Clone to Claude Code global skills directory
+git clone https://github.com/binbinao/document-superpowers.git ~/.claude/skills/document-superpowers
+```
+
+After cloning, add skill references in `~/.claude/CLAUDE.md` or your project's `.claude/CLAUDE.md`:
+
+```markdown
+## Skills
+- ~/.claude/skills/document-superpowers/skills/brainstorming/SKILL.md
+- ~/.claude/skills/document-superpowers/skills/writing-article-plan/SKILL.md
+- ~/.claude/skills/document-superpowers/skills/executing-article-plan/SKILL.md
+- ~/.claude/skills/document-superpowers/skills/reviewing-article/SKILL.md
+- ~/.claude/skills/document-superpowers/skills/subagent-driven-writing/SKILL.md
+```
+
+### Cursor / Codebuddy (CLI)
+
+```bash
+# Clone to Cursor global skills directory
+git clone https://github.com/binbinao/document-superpowers.git ~/.cursor/skills/document-superpowers
+
+# Or clone to project-level directory
+git clone https://github.com/binbinao/document-superpowers.git .cursor/skills/document-superpowers
+```
+
+After cloning, add the skill paths in Cursor's Rules or Agent Settings.
+
+### Gemini CLI
+
+```bash
+# Clone to Gemini CLI config directory
+git clone https://github.com/binbinao/document-superpowers.git ~/.gemini/skills/document-superpowers
+```
+
+Add skill references in `~/.gemini/GEMINI.md` or your project's `GEMINI.md`:
+
+```markdown
+## Skills
+- ~/.gemini/skills/document-superpowers/skills/brainstorming/SKILL.md
+- ~/.gemini/skills/document-superpowers/skills/writing-article-plan/SKILL.md
+- ~/.gemini/skills/document-superpowers/skills/executing-article-plan/SKILL.md
+- ~/.gemini/skills/document-superpowers/skills/reviewing-article/SKILL.md
+- ~/.gemini/skills/document-superpowers/skills/subagent-driven-writing/SKILL.md
+```
+
+### OpenClaw
 
 ```bash
 # Option 1: Clone to your workspace skills directory
-git clone https://github.com/[your-username]/document-superpowers.git ~/.openclaw/skills/document-superpowers
+git clone https://github.com/binbinao/document-superpowers.git ~/.openclaw/skills/document-superpowers
 
 # Option 2: Install via OpenClaw skills manager (if available)
 openclaw skills install document-superpowers
 ```
 
-### For Other Platforms
+### Other Platforms
 
 Copy the `skills/` directory into your AI agent's skills folder according to your platform's documentation.
 
@@ -166,9 +228,27 @@ Agent: [runs four-pass review...]
 Agent: "Review complete. 2 critical issues found and fixed. Final article ready!"
 ```
 
-## File Structure
+## Documentation
 
-During a writing project, you'll see:
+Additional documentation is available in the `docs/` directory:
+
+```
+docs/
+├── DEVELOPMENT.md                      # Development overview & architecture details
+├── SUMMARY.md                          # Implementation summary & project statistics
+└── examples/
+    └── typescript-blog-post.md         # Complete end-to-end writing walkthrough
+```
+
+| Document | Description |
+|---|---|
+| [DEVELOPMENT.md](docs/DEVELOPMENT.md) | In-depth development guide covering project architecture, skill design, workflow details, and extension points |
+| [SUMMARY.md](docs/SUMMARY.md) | Implementation summary with project statistics, file inventory, and feature highlights |
+| [typescript-blog-post.md](docs/examples/typescript-blog-post.md) | A complete example walkthrough: writing a TypeScript blog post from brainstorming to final review |
+
+## Writing Project File Structure
+
+During a writing project, the workflow generates the following files:
 
 ```
 docs/writing/
@@ -328,8 +408,8 @@ This project is heavily inspired by [obra/superpowers](https://github.com/obra/s
 
 ## Support
 
-- Issues: [GitHub Issues](https://github.com/[your-username]/document-superpowers/issues)
-- Discussions: [GitHub Discussions](https://github.com/[your-username]/document-superpowers/discussions)
+- Issues: [GitHub Issues](https://github.com/binbinao/document-superpowers/issues)
+- Discussions: [GitHub Discussions](https://github.com/binbinao/document-superpowers/discussions)
 
 ---
 
